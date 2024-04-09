@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grandiflora+One&family=Noto+Serif+KR&family=Poor+Story&family=Stylish&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Noto Serif KR", serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <h1> 로또 번호 추첨 </h1>
+    <hr width = '100%' color = 'lightgray'>
+    <p> 추첨된 로또 번호 : {{ lotto_numbers }}</p>
+    {% comment %} <h2> 이번 회차 당첨 번호 : [1. 9. 11. 14. 26. 28] + 19 </h2>
+    <ul>
+        <li>1등 : 0번</li>
+        <li>2등 : 0번</li>
+        <li>3등 : 0번</li>
+        <li>4등 : 2번</li>
+        <li>5등 : 21번</li>
+        <li>꼴등 : 977번</li>
+    </ul> {% endcomment %}
+</body>
+</html>

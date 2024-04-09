@@ -1,0 +1,21 @@
+
+
+    {% extends "articles/base.html" %}
+
+    {% block content %}
+        <h2> 가장 좋아하는 영화s123 {{favorite_movie}} </h2>
+        <h2>천만 영화 목록 </h2>
+        {% if movie_list %}
+            <ul> 
+                {% for movie in movie_list %}
+                    <li> {{movie}} </li>
+                {% endfor %}
+            </ul>  
+        {% endif %} 
+
+        <form action='/save_review/' method="GET">
+            <label for='review_text_id'>리뷰: </label>
+            <input type='text' name='review_text' id = 'review_text_id'>
+            <input type='submit' value='submit'>
+        </form>
+    {% endblock content %}

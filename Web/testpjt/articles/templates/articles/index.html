@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+</head>
+  <body>
+    {% extends "articles/base.html" %}
+
+    {% block content %}
+      <h1>Hello {{ name }} </h1>
+      {% if result == 10 %}
+          <h2> 결과값은 10! </h2>
+      {% endif %}
+    {% endblock content %}
+ 
+</body>
+</html>

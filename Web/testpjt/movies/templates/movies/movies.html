@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+</head>
+<body>
+    <h2> 가장 좋아하는 영화 {{favorite_movie}} </h2>
+    <h2>천만 영화 목록 </h2>
+    {% if movie_list %}
+        <ul> 
+            {% for movie in movie_list %}
+                <li> {{movie}} </li>
+            {% endfor %}
+        </ul>
+    {% endif %} 
+</body>
+</html>

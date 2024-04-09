@@ -3,8 +3,13 @@
 {% block content %}
     <h1>이곳에서 영화를 생성합니다. </h1>
     {% comment %} <p>영화를 추가할 수 있는 페이지입니다.</p> {% endcomment %}
-
+    <form action="/save_movie/" method='GET'>
+        <label for="movie_text_id"></label>
+        <input type="text" name='movie_text' id='movie_text_id'>
+        <input type="submit" value="제출">
+    </form>
+    
     <!-- 2. 영화를 추가할 수 있는 페이지에서 메인 페이지로 돌아갈 수 있는 하이퍼링크 -->
-    <a href="/movies/">메인 페이지로 돌아가기</a>
+    <a href="/movies/">메인 페이지</a>
 {% endblock content %}
 

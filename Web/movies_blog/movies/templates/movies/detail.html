@@ -1,0 +1,16 @@
+
+
+{% extends "movies/base.html" %}
+
+{% block content %}
+    <h1>생성 영화 상세 페이지</h1>
+    {% if movie_text %}
+        <p>영화 제목: <a href="https://search.naver.com/search.naver?query={{ movie_text }}">{{ movie_text }}</a></p>
+    
+    {% else %}
+        <p> 영화가 없습니다. </p>
+
+    {% endif %}
+{% endblock content %}
+
+

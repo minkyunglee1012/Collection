@@ -1,0 +1,17 @@
+{% extends "accounts/base.html" %}
+
+{% block content %}
+
+    <h1> 로그인 페이지 </h1>
+    <form action='/create_movie/' method="GET">
+        {% csrf_token %}
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="submit" value="Login">
+    </form>
+
+{% endblock content %}
+
+

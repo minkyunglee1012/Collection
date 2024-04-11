@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from articles import views  # articles app의 views.py 파일 불러오기 
 from movies import views as movie_views 
 
@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # articles라는 경로로 들어왔을 때
     # articles app의 views.py파일의 index함수를 호출
-    path('articles/', views.index),
-    path('movies/', views.movies),
-    path('save_review/', views.save_review)
+    path('articles/', include('articles.urls')),
+    # path('movies/', views.movies),
+    # path('save_review/', views.save_review)
 ]

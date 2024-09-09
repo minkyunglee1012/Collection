@@ -1,3 +1,5 @@
+-- 내가 보려고 만든 업무에 유용한 쿼리들 -- 
+
 --테이블 컬럼 개수 확인 쿼리
 SELECT count(*)
 FROM table_columns
@@ -26,6 +28,7 @@ SELECT
     COUNT(*) AS GROUP_COUNT
 FROM 스키마명.테이블명
 GROUP BY COL3
+  ...
 ORDER BY COLUMN_NAME, VALUE 
 
   
@@ -49,14 +52,14 @@ DROP TABLE 테이블명
   
 -- 보고싶은 테이블 찾기
 SELECT * 
-FROM TABLE_COLUMNS  # VIEW도 마찬가지로 하면 된다
+FROM TABLE_COLUMNS           -- VIEW도 마찬가지로 하면 된다
 WHERE 1=1 
 AND SCHEMA_NAME = '스키마명'
 AND TABLE_NAME LIKE '%CQ_%'
 ORDER BY POSITION 
 
   
--- 중복 있을 때 새로운 테이블 만들어서 중복 없애고 데이터 값 넣기
+-- 중복 있을 때 컬럼명은 그대로 새로운 테이블 만들어서(1) 중복 없애고 데이터 값 넣기(2)
 CREATE COLUMN TABLE 스키마명.새로운테이블명
 LIKE 스키마명.기존테이블명;
 
@@ -65,3 +68,9 @@ FROM 스키마명.기존테이블명
 INTO 스키마명.새로운테이블명;
 
 SELECT * FROM 스키마명.새로운테이블명
+
+
+-- 교집합
+INTERSECT
+-- 차집합
+EXCEPT 

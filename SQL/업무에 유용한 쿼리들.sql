@@ -26,6 +26,16 @@ FROM table_columns
 WHERE 1=1 
 AND table_name = '테이블명'
 AND schema_name = '스키마명';
+ORDER BY POSITION
+  
+-- 추가로 주석, 데이터 길이, 널값 허용 여부, 숫자타입 소숫점 자리 추가하는 쿼리 
+SELECT column_name, comments, data_type_name, LENGTH, is_nullable, SCALE
+FROM table_columns
+WHERE 1=1 
+AND table_name = '테이블명'
+AND schema_name = '스키마명'
+ORDER BY POSITION 
+
 
 
 

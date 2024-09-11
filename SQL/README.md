@@ -9,4 +9,6 @@
 
 
 </div>
+
+[현재 실무를 하며 자주 사용하는 쿼리들](https://github.com/minkyunglee1012/Practice_Collection/blob/master/SQL/%EC%9E%90%EC%A3%BC%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%20%EC%BF%BC%EB%A6%AC%EB%93%A4_20240911.sql)
  

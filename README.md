@@ -1,4 +1,4 @@
-##### MK 실습 및 스터디 업로드 공간입니다. ㅎㅎ
+##### 스터디 및 실습 업로드 공간 
 
 
 <div>
@@ -15,7 +15,7 @@
     2. SQL
 
     - SQL 이론 공부
-    - 쿼리 실습
+    - [실무](https://github.com/minkyunglee1012/Practice_Collection/blob/master/SQL/%20SQL.md)
   </h6>
 </div>
 

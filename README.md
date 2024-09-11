@@ -5,8 +5,8 @@
   <h6>
     1. 빅데이터 분석
 
-    - 머신러닝 및 딥러닝, 자연어 처리 실습
-    - 빅데이터 분석 기사 실기 준비 
+ - 머신러닝 및 딥러닝, 자연어 처리 실습
+ - 빅데이터 분석 기사 실기 준비 
   </h6>
 </div>
 
@@ -14,8 +14,8 @@
   <h6>
     2. SQL
 
-    - SQL 이론 공부
-    - [실무](https://github.com/minkyunglee1012/Practice_Collection/blob/master/SQL/%20SQL.md)
+ - SQL 이론 공부
+ -  [실무](https://github.com/minkyunglee1012/Practice_Collection/blob/master/SQL/%20SQL.md)
   </h6>
 </div>
 

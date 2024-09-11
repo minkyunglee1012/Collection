@@ -1,5 +1,6 @@
--- 내가 보려고 만든 업무에 유용한, 자주 사용하는 쿼리들 -- SAPHANA 
--- 계속 업데이트 
+-- 내가 보려고 만든 업무에 유용한, 자주 사용하는 쿼리들 -- SAPHANA DBeaver
+-- 계속 업데이트 (2024-09-11 기준)
+
 
 
 -- 1. 보고싶은 테이블 찾기
@@ -10,6 +11,7 @@ AND SCHEMA_NAME = '스키마명'
 AND TABLE_NAME LIKE '%CQ_%'
 ORDER BY POSITION 
 
+  
   
 -- 2. 테이블 컬럼 개수 확인 쿼리
 SELECT count(*)
@@ -39,7 +41,7 @@ ORDER BY POSITION
 
 
 
--- 4. 테이블 그룹별 코드 카운트 쿼리
+-- 4. 테이블 그룹별 코드 카운트 쿼리 (코드성 검토)
 SELECT 
     'COL1' AS COLUMN_NAME, 
     COL1 AS VALUE, 
@@ -64,7 +66,8 @@ GROUP BY COL3
 ORDER BY COLUMN_NAME, VALUE 
 
   
--- 5. 중복 개수 확인
+  
+-- 5. 중복 개수 확인 (적재 검토)
 SELECT COUNT(1), COUNT(distinct COL1)
 FROM 테이블명
 
@@ -73,6 +76,7 @@ FROM 테이블명
 GROUP BY COL1
 HAVING count(COL1) > 1
 
+  
 
 -- 6. 데이터 및 테이블 삭제
 -- 특정 행 데이터 삭제
@@ -81,6 +85,7 @@ DELETE FROM 테이블명 WHERE a = '_';
 TRUNCATE TABLE 스키마명.테이블명
 -- 테이블 삭제
 DROP TABLE 테이블명
+
 
   
 -- 7. 중복 있을 때 컬럼명은 그대로 새로운 테이블 만들어서(1) 중복 없애고 데이터 값 넣기(2)
@@ -93,6 +98,7 @@ INTO 스키마명.새로운테이블명;
 
 SELECT * FROM 스키마명.새로운테이블명
 
+  
 
 -- 교집합
 INTERSECT

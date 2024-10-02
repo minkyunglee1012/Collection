@@ -1,4 +1,6 @@
 -- 서브쿼리(Subquery)와 조인(JOIN)을 같이 사용하는 것은 데이터베이스 쿼리 작성 시 다양한 데이터 집합을 결합하고 필터링하는 데 유용하다. 이를 통해 복잡한 조건을 만족하는 데이터를 추출할 수 있다.
+-- 실무에서도 서브쿼리와 조인을 사용할 수 있는 능력은 기본이며, 다양한 연계키와 조인해서 데이터를 추출하거나 검증하는 경우 서브쿼리와 조인의 조합은 필수로 사용된다.
+
 
 -- 서브쿼리(Subquery):
 
@@ -10,6 +12,7 @@
 -- 스칼라 서브쿼리(Scalar Subquery): 하나의 값을 반환하는 서브쿼리입니다. 예를 들어, 특정 값을 비교할 때 사용
 -- 행 서브쿼리(Row Subquery): 하나의 행을 반환하는 서브쿼리로, 여러 값을 동시에 비교할 때 사용.
 -- 테이블 서브쿼리(Table Subquery): 여러 행을 반환하는 서브쿼리입니다. IN, EXISTS 같은 키워드와 함께 많이 사용
+
 
   
 -- 조인(JOIN):
@@ -23,13 +26,15 @@
 
 
 
+
 -- 문제 : FOOD_PRODUCT와 FOOD_ORDER 테이블에서 생산일자가 2022년 5월인 식품들의 식품 ID, 식품 이름, 총매출을 조회하는 SQL문을 작성해주세요. 
 --        이때 결과는 총매출을 기준으로 내림차순 정렬해주시고 총매출이 같다면 식품 ID를 기준으로 오름차순 정렬해주세요.
 
-select p.PRODUCT_ID, p.PRODUCT_NAME, o.AMOUNT * p.PRICE as TOTAL_SALES
-from FOOD_PRODUCT p join (select PRODUCT_ID, sum(AMOUNT) as AMOUNT
-                        from FOOD_ORDER
-                        where date_format(PRODUCE_DATE, '%Y-%m') = '2022-05'
-                        group by PRODUCT_ID) as o
-                    on p.PRODUCT_ID = o.PRODUCT_ID
-order by TOTAL_SALES desc, p.PRODUCT_ID asc;
+SELECT p.PRODUCT_ID, p.PRODUCT_NAME, o.AMOUNT * p.PRICE as TOTAL_SALES
+FROM FOOD_PRODUCT p JOIN (SELECT PRODUCT_ID, SUM(AMOUNT) as AMOUNT
+                          FROM FOOD_ORDER
+                          WHERE DATE_FORMAT(PRODUCE_DATE, '%Y-%m') = '2022-05'
+                          GROUP BY PRODUCT_ID) as o
+                    ON p.PRODUCT_ID = o.PRODUCT_ID
+ORDER BY TOTAL_SALES DESC, p.PRODUCT_ID ASC;
+
